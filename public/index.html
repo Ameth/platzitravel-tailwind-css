@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 
 <head>
     <meta charset="UTF-8">
@@ -10,39 +10,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Platzi Travel</title>
+    <script>
+        function toggleDarkMode() {
+            const html = document.querySelector('html')
+            html.classList.contains('dark') ? html.classList.remove('dark') : html.classList.add('dark')
+        }
+    </script>
 </head>
 
-<body class="font-Montserrat">
+<body class="font-Montserrat dark:bg-slate-800">
     <header>
-        <nav></nav>
+        <nav
+            class="w-full h-14 bg-white hidden p-4 lg:flex justify-between fixed z-50 dark:bg-gray-800 text-primary dark:text-white">
+            <div class="h-auto w-auto">
+                <p class="text-xl font-black">Platzi Travel</p>
+            </div>
+            <div class="flex space-x-8">
+                <a class="font-bold text-base hover:scale-110" href="#home">Inicio</a>
+                <a class="font-bold text-base hover:scale-110" href="#recomendados">Recomendados</a>
+                <a class="font-bold text-base hover:scale-110" href="#rentas-destacadas">Rentas</a>
+                <a class="font-bold text-base hover:scale-110" href="#faqs">FAQS</a>
+                <a class="font-bold text-base hover:scale-110" href="#acerca">Sobre nosotros</a>
+            </div>
+            <div class="flex space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                        d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+                        clip-rule="evenodd" />
+                </svg>
+                <button onclick="toggleDarkMode()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        class="w-6 h-6 fill-current">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    class="w-6 h-6 fill-current">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+            </div>
+        </nav>
     </header>
     <main>
         <section class="w-full h-auto">
-            <div id="home">
-                <div class="w-full h-3/4">
+            <div id="home" class="lg:h-[40rem]">
+                <div class="w-full h-full">
                     <div
-                        class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center lg:space-y-0 lg:items-start lg:pt-32 lg:ml-16">
+                        class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center lg:space-y-0 lg:items-start lg:pt-32 lg:pl-8">
                         <input
-                            class="outline-none p-3 pl-6 rounded-full shadow-md focus:scale-x-125 transition duration-300 lg:hidden"
+                            class="outline-none p-3 pl-6 rounded-full shadow-md focus:scale-x-125 transition duration-300 lg:hidden dark:text-slate-400 dark:bg-slate-800 dark:hover:bg-slate-700"
                             placeholder="San Francisco" type="search" name="" id="">
                         <div class="hidden h-auto lg:w-2/6 lg:flex pb-6">
-                            <p class="text-4xl font-bold text-black text-shadow ">Encuentra más ubicaciones como esta
+                            <p class="text-4xl font-bold text-black text-shadow">Encuentra más ubicaciones como esta
                             </p>
                         </div>
                         <a href="#recomendados"
-                            class="bg-white text-xl text-primary font-semibold px-4 py-2 rounded-full w-32 shadow-md hover:text-white hover:bg-primary hover:scale-110 transition-all items-center justify-center flex">
+                            class="bg-white text-xl text-primary font-semibold px-4 py-2 rounded-full w-32 shadow-md hover:text-white hover:bg-primary hover:scale-110 transition-all items-center justify-center flex dark:bg-indigo-500 dark:text-white">
                             Explorar
                         </a>
                     </div>
-                    <div class="w-full h-full lg:h-96 lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+                    <div class="w-full h-full lg:bg-sanFranciscoDesktop lg:bg-cover bg-bottom lg:bg-fixed">
                         <img class="lg:hidden" src="./img/sanFrancisco.jpg" alt="">
                     </div>
                 </div>
             </div>
             <div id="recomendados" class="p-6">
-                <p class="text-3xl font-semibold text-primary">Recomendados</p>
+                <p class="text-3xl font-semibold text-primary dark:text-white">Recomendados</p>
                 <div
-                    class="w-auto h-72 items-center mt-6 overflow-x-auto overflow-y-hidden  overscroll-x-contain flex space-x-6">
+                    class="w-auto h-72 items-center mt-6 overflow-x-auto overflow-y-hidden overscroll-x-contain flex space-x-6">
                     <div class="card">
                         <div class="bg-norway"></div>
                         <div>
@@ -108,51 +145,66 @@
                     </div>
                 </div>
             </div>
-            <div id="rentas-destacadas" class="p-6 h-full w-full">
-                <p class="text-3xl font-semibold text-primary">Rentas destacadas</p>
+            <div id="rentas-destacadas" class="p-6 h-full w-full flex space-y-4 flex-col">
+                <p class="text-3xl font-semibold text-primary dark:text-white">Rentas destacadas</p>
                 <div class=" mt-6 flex flex-col space-y-6 items-center justify-center">
-                    <div class="w-full h-96 bg-chicago bg-cover rounded-lg">
-                        <p class="card-title">Chicago</p>
+                    <div class="w-full h-96 bg-chicago bg-cover rounded-lg lg:bg-center max-lg:bg-fixed">
+                        <p class="card-title lg:text-black">Chicago</p>
+                        <p class="card-description lg:text-black">2 habitaciones, baño y cocina</p>
+                    </div>
+                    </div>
+                    <div class="lg:flex lg:h-full lg:w-full lg:space-x-4 lg:mt-4">
+                        <div class="w-full h-96 bg-LA bg-cover rounded-lg lg:h-auto max-lg:bg-fixed">
+                            <p class="card-title">Los Angeles</p>
                         <p class="card-description">2 habitaciones, baño y cocina</p>
                     </div>
-                </div>
-                <div class="mt-6">
-                    <div class="w-full h-96 bg-chicago bg-cover rounded-lg">
-                        <p class="card-title">Chicago</p>
-                        <p class="card-description">2 habitaciones, baño y cocina</p>
+                    <div class="h-full w-full flex flex-col space-y-4 mt-4 lg:mt-0">
+                        <div class="w-full h-96 bg-miami bg-cover rounded-lg max-lg:bg-fixed">
+                            <p class="card-title">Miami</p>
+                            <p class="card-description">2 habitaciones, baño y cocina</p>
+                        </div>
+                        <div class="w-full h-96 bg-bali bg-cover rounded-lg max-lg:bg-fixed">
+                            <p class="card-title">Bali</p>
+                            <p class="card-description">2 habitaciones, baño y cocina</p>
+                        </div>
+                        <div class="w-full h-96 bg-seattle bg-cover rounded-lg max-lg:bg-fixed">
+                            <p class="card-title">Seattle</p>
+                            <p class="card-description">2 habitaciones, baño y cocina</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div id="faqs" class="w-full h-full p-6">
                 <div class="flex flex-col space-y-4">
-                    <p class="text-3xl font-semibold text-primary">FAQS</p>
+                    <p class="text-3xl font-semibold text-primary dark:text-white">FAQS</p>
                     <div>
-                        <p class="text-xl font-medium text-primary">Política de cancelación</p>
-                        <p class="text-base pt-2">
+                        <p class="text-xl font-medium text-primary dark:text-white">Política de cancelación</p>
+                        <p class="text-base pt-2 dark:text-gray-300">
                             Para estancias menores a una semana es importante avisar con 3 días de anticipación, de caso
                             contario será sancionado.
                         </p>
                     </div>
                     <div>
-                        <p class="text-xl font-medium text-primary">Métodos de pago</p>
-                        <p class="text-base pt-2">
+                        <p class="text-xl font-medium text-primary dark:text-white">Métodos de pago</p>
+                        <p class="text-base pt-2 dark:text-gray-300">
                             Aceptamos distintos métodos de pago: VISA, MasterCard, American Express,
                             Paypal y Binance
                         </p>
                     </div>
                     <div>
-                        <p class="text-xl font-medium text-primary">Mascotas</p>
-                        <p class="text-base pt-2">El tema de las mascotas dependerá directamente del anfitrión.</p>
+                        <p class="text-xl font-medium text-primary dark:text-white">Mascotas</p>
+                        <p class="text-base pt-2 dark:text-gray-300">El tema de las mascotas dependerá directamente del
+                            anfitrión.</p>
                     </div>
                     <div>
-                        <p class="text-xl font-medium text-primary">Información de Seguridad</p>
-                        <p class="text-base pt-2">
+                        <p class="text-xl font-medium text-primary dark:text-white">Información de Seguridad</p>
+                        <p class="text-base pt-2 dark:text-gray-300">
                             Todas nuestras estancias cuentan con seguro en caso de accidentes
                         </p>
                     </div>
                     <div>
-                        <p class="text-xl font-medium text-primary">Estancias Largas</p>
-                        <p class="text-base pt-2">
+                        <p class="text-xl font-medium text-primary dark:text-white">Estancias Largas</p>
+                        <p class="text-base pt-2 dark:text-gray-300">
                             Contamos con estancias de hasta 3 meses, en este caso es requerido un
                             anticipo con un monto del 50% del valor de la renta
                         </p>
@@ -162,7 +214,8 @@
             </div>
         </section>
     </main>
-    <footer class="w-full h-auto bg-gray-50 text-gray-600 p-6 space-y-2">
+    <footer id="acerca"
+        class="w-full h-auto bg-gray-50 text-gray-600 p-6 space-y-2 mb-20 lg:mb-0 dark:bg-slate-700 dark:text-gray-200">
         <p class="text-lg font-semibold">Acerca de</p>
         <p class="text-sm">Inversionistas</p>
         <p class="text-sm">Empleados</p>
@@ -170,9 +223,9 @@
         <p class="text-sm">Platzi Travel, Inc.</p>
     </footer>
     <div id="tab-bar"
-        class="w-full h-16 bg-white fixed left-0 bottom-0 shadow-md p-6 flex space-x-8 items-center justify-evenly lg:hidden">
+        class="w-full h-16 bg-white fixed left-0 bottom-0 shadow-md p-6 flex space-x-8 items-center justify-evenly lg:hidden dark:bg-slate-700">
         <a href="#home" class="hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 fill-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 fill-gray-500 dark:fill-white">
                 <path
                     d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
                 <path
@@ -182,7 +235,7 @@
         </a>
         <a href="#recomendados" class="hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                class="w-10 h-10 fill-gray-500">
+                class="w-10 h-10 fill-gray-500 dark:fill-white">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
             </svg>
@@ -190,7 +243,7 @@
         </a>
         <a href="#rentas-destacadas" class="hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="w-10 h-10 text-primary">
+                class="w-10 h-10 text-primary dark:fill-white">
                 <path fill-rule="evenodd"
                     d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
                     clip-rule="evenodd" />
@@ -199,14 +252,14 @@
         </a>
         <a href="#" class="hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                class="w-10 h-10 fill-gray-500 ">
+                class="w-10 h-10 fill-gray-500 dark:fill-white ">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
         </a>
-        <button class="hover:scale-110">
+        <button onclick="toggleDarkMode()" class="hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                class="w-10 h-10 fill-gray-500">
+                class="w-10 h-10 fill-gray-500 dark:fill-white">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
             </svg>

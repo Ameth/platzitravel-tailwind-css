@@ -18,6 +18,14 @@
   .card > div:nth-child(2) > p:nth-child(2) {
     @apply text-white text-base px-4;
   }
+  
+  .card:nth-child(odd) > div:nth-child(2){
+    @apply dark:bg-gray-600
+  }
+
+  .card:nth-child(even) > div:nth-child(2){
+    @apply dark:bg-gray-800
+  }
 
   .card-title {
     @apply text-3xl px-8 pt-8 pb-1 font-semibold text-white;
